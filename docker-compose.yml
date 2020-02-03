@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  web:
+    container_name: project.local-web
+    build: ./.docker/php-apache
+    ports:
+      - 80:80
+    links:
+      - db
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - project_default
+
+  db:
+    container_name: project.local-mysql
+    image: mysql:8.0.16
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: project
+      MYSQL_ROOT_PASSWORD: XXXX
+    volumes:
+      - ./.docker/mysql/db:/var/lib/mysql
+    networks:
+      - project_default
+
+  adminer:
+    container_name: project.local-adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+volumes:
+  src:
+    driver: local
+  db:
+    driver: local
+
+networks:
+  project_default:
