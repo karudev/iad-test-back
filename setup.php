@@ -4,7 +4,6 @@ use App\Model\DB;
 
 try {
     $db = DB::getInstance();
-    var_dump($db);
 
     $dbSQL = __DIR__ . '/install/db.sql';
 

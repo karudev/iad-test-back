@@ -2,7 +2,10 @@
 namespace App\Model;
 use App\Model\DB;
 
-
+/**
+ * Class AbstractModel
+ * @package App\Model
+ */
 class AbstractModel
 {
     public $db;
@@ -13,7 +16,16 @@ class AbstractModel
         $this->db = DB::getInstance();
     }
 
-    public function findBy($array = [], $multiple = false, $join = '')
+    /**
+     * Request with params
+     * @param array $array
+     * @param bool $multiple
+     * @param string $join
+     * @param string $sort
+     * @param string $order
+     * @return array|mixed
+     */
+    public function findBy($array = [], $multiple = false, $join = '', $sort='id', $order = 'asc')
     {
         $sql = 'select * from '.$this->table;
         $bind = [];
@@ -33,6 +45,8 @@ class AbstractModel
             $i++;
         }
 
+        $sql .= ' order by '.$sort. ' '.$order;
+
         try{
             $stmt = $this->db->prepare($sql, $bind);
             $stmt->execute($bind);
@@ -46,6 +60,11 @@ class AbstractModel
 
     }
 
+    /**
+     * Insert with params
+     * @param $array
+     * @return bool
+     */
     public function insert($array)
     {
         $sql = 'insert into '.$this->table .' ( ';

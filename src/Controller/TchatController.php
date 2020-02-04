@@ -1,11 +1,17 @@
 <?php
 namespace App\Controller;
 use App\Model\Message;
-use App\Model\User;
 use App\Service\Auth;
 
+/**
+ * Class TchatController
+ * @package App\Controller
+ */
 class TchatController extends AbstractController
 {
+    /**
+     * Tchat page with the messages
+     */
     public function index()
     {
         if(!Auth::isConnected()){
@@ -13,11 +19,14 @@ class TchatController extends AbstractController
             exit;
         }
         $messageModel = new Message();
-        $messages = $messageModel->findBy([], true,'left join user on user.id = message.user_id');
+        $messages = $messageModel->findBy([], true,'left join user on user.id = message.user_id', 'message.id');
         $this->render('/tchat/index.phtml', ['messages' => $messages]);
 
     }
 
+    /**
+     * Post a message
+     */
     public function post()
     {
         $data = $this->getPost();

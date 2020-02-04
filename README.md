@@ -1,5 +1,36 @@
 I@D Digital Test Back
 ===
+
+INSTALL
+----
+
+Install the project since this url
+```
+http://localhost/setup.php
+```
+
+Go to the login page 
+```
+http://localhost
+```
+
+Fixtures
+----
+```
+Dolyveen RENAULT
+d.renault@yopmail.com / test
+
+Patrick DUPONT
+p.dupont@yopmail.com / test
+
+Jean LOUP
+j.loup@yopmail.com / test
+```
+
+HAVE FUN !!!! :)
+
+BRIEF
+----
 Nous voudrions un T’chat, construit sur un modele MVC objet maison, sans framework. Les éléments techniques sont les suivants :
 Durée : 4 heures
 - PHP 5 / MySQL / HTML 5

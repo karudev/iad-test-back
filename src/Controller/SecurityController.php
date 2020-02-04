@@ -3,16 +3,23 @@ namespace App\Controller;
 use App\Model\User;
 use App\Service\Auth;
 
+/**
+ * Class SecurityController
+ * @package App\Controller
+ */
 class SecurityController extends AbstractController
 {
+    /**
+     * Login page
+     */
     public function index()
     {
-
-        $data = ['test' => 'test2'];
-        $this->render('/security/index.phtml', $data);
-
+        $this->render('/security/index.phtml');
     }
 
+    /**
+     * Check the authentification
+     */
     public function loginCheck()
     {
         $data = $this->getPost();
@@ -31,6 +38,10 @@ class SecurityController extends AbstractController
         exit;
 
     }
+
+    /**
+     * Disconnect the user
+     */
     public function logout()
     {
         Auth::disconnect();
