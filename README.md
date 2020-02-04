@@ -4,6 +4,11 @@ I@D Digital Test Back
 INSTALL
 ----
 
+Install the docker stack
+```
+~/projects/iad-test-back$ docker-compose up -d
+```
+
 Install the project since this url
 ```
 http://localhost/setup.php
