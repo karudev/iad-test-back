@@ -1,0 +1,20 @@
+<?php include __DIR__.'/../header.phtml'; ?>
+
+<h1>Tchat privé</h1>
+
+<div style="border: 1px solid lightgrey; padding: 10px; width: 96%;margin: 10px;min-height: 100px">
+
+</div>
+<div>
+<form method="POST" action="/public/?controller=tchat&action=post">
+    <div>
+        <label for="password">Message</label>
+        <textarea type="textarea"  style="width: 100%" rows="5" name="message" id="message"></textarea>
+    </div>
+    <div>
+        <button type="submit">Envoyer</button>
+    </div>
+</form>
+</div>
+<?php include __DIR__.'/../footer.phtml'; ?>
+

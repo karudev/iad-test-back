@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tchat I@D Digital</title>
+</head>
+<body>
+<header style="text-align: right;background: lightgrey;height: 20px;padding: 20px">
+    <?php if (isset($view['_user'])) {
+        echo '<span style="background-color:greenyellow;min-width:10px;min-height:10px;padding: 10px"></span>'. $view['_user']['firstname'].' '.$view['_user']['lastname'];
+        echo ' | <a href="/public/?controller=security&action=logout">Se déconnecter</a>';
+    }else{
+        ' ';
+    } ?>
+</header>
