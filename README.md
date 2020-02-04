@@ -2,11 +2,11 @@ I@D Digital Test Back
 ===
 Nous voudrions un T’chat, construit sur un modele MVC objet maison, sans framework. Les éléments techniques sont les suivants :
 Durée : 4 heures
-- PHP 5 / MySQL / HTML 5 : OK
-- Apache ou Nginx : OK
+- PHP 5 / MySQL / HTML 5
+- Apache ou Nginx
 - Une architecture basée sur le modèle MVC objet (l’arborescence doit aussi respecter ce modèle)
 - Une page d’authentification avec si possible, creation automatique de comptes
-- Une page de T’chat, avec :
+- Une page de T’chat, avec
 - Listing des messages archivés
 - Possibilité de dialoguer avec les autres membres
 - Listing des connectés (si vous avez le temps)

@@ -3,6 +3,17 @@
 <h1>Tchat privé</h1>
 
 <div style="border: 1px solid lightgrey; padding: 10px; width: 96%;margin: 10px;min-height: 100px">
+<ul>
+    <?php foreach ($view['messages'] as $message){ ?>
+            <li style="margin-bottom: 10px">
+                <b><?= $message['firstname'].' '.$message['lastname'] ?></b> dit à <?= $message['created_at'] ?> :
+                <br/>
+                <?= nl2br($message['message']) ?>
+            </li>
+     <?php } ?>
+
+</ul>
+
 
 </div>
 <div>
